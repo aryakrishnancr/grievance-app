@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:user_auth/form.dart';
+import 'package:user_auth/form.dart' as grivence;
 import 'package:user_auth/login.dart';
 import 'package:user_auth/screens/signin_screen.dart';
 
@@ -22,7 +22,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const FormScreen()));
+                        builder: (context) => const grivence.Form()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width / 2,
@@ -38,8 +38,10 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SignInScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignInScreen()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width / 2,
