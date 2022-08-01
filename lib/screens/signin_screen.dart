@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:user_auth/adminpage.dart';
 import 'package:user_auth/reusable_widgets/reusable_widget.dart';
 //import 'package:user_auth/screens/home_screen.dart';
 import 'package:user_auth/screens/reset_password.dart';
@@ -56,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Table()));
+                        MaterialPageRoute(builder: (context) => admin()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });

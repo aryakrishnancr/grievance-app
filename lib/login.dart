@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_auth/adminpage.dart';
 import 'package:user_auth/forget_password.dart';
 
 class login extends StatelessWidget {
@@ -90,7 +91,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   child: const Text('Login'),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Table()));
+                        MaterialPageRoute(builder: (context) => admin()));
                   },
                 )),
           ],
