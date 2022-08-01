@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:user_auth/form.dart' as grivence;
-import 'package:user_auth/login.dart';
 import 'package:user_auth/screens/signin_screen.dart';
 
 class NewHomeScreen extends StatefulWidget {
@@ -30,7 +29,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.person),
+                    Icon(Icons.add_box_rounded),
                     Text("COMPLAINT BOX"),
                   ],
                 ),
@@ -49,7 +48,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.business),
+                    Icon(Icons.manage_accounts_outlined),
                     Text("COMPLAINT MANAGER"),
                   ],
                 ),

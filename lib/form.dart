@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:user_auth/data/models/user_model.dart';
 import 'package:user_auth/data/remote_data_source/firestore_helper.dart';
+import 'package:user_auth/submission.dart';
 import 'package:user_auth/user_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -58,7 +59,7 @@ class _HomePageState extends State<Form> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Pls fil The Form"),
+          title: const Text("Pls fill The Form"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -66,27 +67,27 @@ class _HomePageState extends State<Form> {
             children: [
               TextFormField(
                 controller: _usernameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Name"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
                 controller: _departmentController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Department"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
                 controller: _descrptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: "Description in Detail"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -116,18 +117,18 @@ class _HomePageState extends State<Form> {
                 }).toList(),
               ),
               Container(
-                  margin: EdgeInsets.all(15),
-                  padding: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(15),
                     ),
                     border: Border.all(color: Colors.white),
                     boxShadow: [
-                      BoxShadow(
+                      const BoxShadow(
                         color: Colors.black12,
-                        offset: Offset(2, 2),
+                        offset: const Offset(2, 2),
                         spreadRadius: 2,
                         blurRadius: 1,
                       ),
@@ -136,7 +137,7 @@ class _HomePageState extends State<Form> {
                   child: (_pickedImage != null)
                       ? Image.memory(_pickedImage!)
                       : Image.network('https://i.imgur.com/sUFH1Aq.png')),
-              SizedBox(
+              const SizedBox(
                 height: 0,
               ),
               InkWell(
@@ -154,22 +155,22 @@ class _HomePageState extends State<Form> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.upload,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Text(
                         _isUploading ? "loading" : "upload",
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               InkWell(
@@ -178,7 +179,7 @@ class _HomePageState extends State<Form> {
                     _isUploading = true;
                   });
                   try {
-                    String uid = Uuid().v1();
+                    String uid = const Uuid().v1();
                     var a = await storage.ref(uid).putFile(
                         imagefile,
                         SettableMetadata(customMetadata: {
@@ -203,7 +204,7 @@ class _HomePageState extends State<Form> {
                   });
 
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NewHomeScreen()));
+                      MaterialPageRoute(builder: (context) => const Page1()));
 
                   // _create();
                 },
@@ -215,18 +216,18 @@ class _HomePageState extends State<Form> {
                     color: Colors.green,
                   ),
                   child: _isUploading
-                      ? CircularProgressIndicator()
+                      ? const CircularProgressIndicator()
                       : Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.add,
                               color: Colors.white,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Create",
                               style: TextStyle(color: Colors.white),
                             ),
@@ -234,7 +235,7 @@ class _HomePageState extends State<Form> {
                         ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 

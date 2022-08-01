@@ -3,7 +3,7 @@ import 'package:user_auth/adminpage.dart';
 import 'package:user_auth/reusable_widgets/reusable_widget.dart';
 //import 'package:user_auth/screens/home_screen.dart';
 import 'package:user_auth/screens/reset_password.dart';
-import 'package:user_auth/screens/signup_screen.dart';
+//import 'package:user_auth/screens/signup_screen.dart';
 import 'package:user_auth/utils/color_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -25,9 +25,9 @@ class _SignInScreenState extends State<SignInScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("000000"),
-          hexStringToColor("000000"),
-          hexStringToColor("000000")
+          hexStringToColor("01579B"),
+          hexStringToColor("29B6F6"),
+          hexStringToColor("01579B")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
@@ -35,7 +35,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 20, MediaQuery.of(context).size.height * 0.2, 20, 0),
             child: Column(
               children: <Widget>[
-                logoWidget("assets/images/logo1.png"),
                 const SizedBox(
                   height: 30,
                 ),
@@ -62,7 +61,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     print("Error ${error.toString()}");
                   });
                 }),
-                signUpOption()
+    //            signUpOption()
               ],
             ),
           ),
@@ -71,25 +70,25 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  Row signUpOption() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Don't have account?",
-            style: TextStyle(color: Colors.white70)),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
-          },
-          child: const Text(
-            " Sign Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        )
-      ],
-    );
-  }
+ // Row signUpOption() {
+ //   return Row(
+ //     mainAxisAlignment: MainAxisAlignment.center,
+ //     children: [
+ //       const Text("Don't have account?",
+ //           style: TextStyle(color: Colors.white70)),
+ //       GestureDetector(
+ //         onTap: () {
+ //           Navigator.push(context,
+ //               MaterialPageRoute(builder: (context) => SignUpScreen()));
+ //         },
+ //         child: const Text(
+ //           " Sign Up",
+  //          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+  //        ),
+  //      )
+  //    ],
+  //  );
+ // }
 
   Widget forgetPassword(BuildContext context) {
     return Container(

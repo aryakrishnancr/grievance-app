@@ -54,30 +54,30 @@ class _EditPageState extends State<EditPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("complaints"),
+          title: const Text("complaints"),
         ),
         body: Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Column(
             children: [
               Text(username!),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(department!),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(type!),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(desc!),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               image == null
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : Image.network(image!),
               // InkWell(
               //   onTap: () {

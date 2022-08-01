@@ -25,11 +25,11 @@ class admin extends StatefulWidget {
 
 class _HomePageState extends State<admin> {
   FirebaseStorage storage = FirebaseStorage.instance;
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _departmentController = TextEditingController();
-  TextEditingController _descrptionController = TextEditingController();
-  TextEditingController _typeController = TextEditingController();
-  TextEditingController _Controller = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _departmentController = TextEditingController();
+  final TextEditingController _descrptionController = TextEditingController();
+  final TextEditingController _typeController = TextEditingController();
+  final TextEditingController _Controller = TextEditingController();
   final List<String> type = [
     'Canteen',
     'Mess',
@@ -59,7 +59,7 @@ class _HomePageState extends State<admin> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Complaint List"),
+          title: const Text("Complaint List"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -242,12 +242,12 @@ class _HomePageState extends State<admin> {
                   stream: FirestoreHelper.read(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(
+                      return const Center(
                         child: CircularProgressIndicator(),
                       );
                     }
                     if (snapshot.hasError) {
-                      return Center(
+                      return const Center(
                         child: Text("some error occured"),
                       );
                     }
@@ -259,16 +259,16 @@ class _HomePageState extends State<admin> {
                             itemBuilder: (context, index) {
                               final singleUser = userData[index];
                               return Container(
-                                margin: EdgeInsets.symmetric(vertical: 5),
+                                margin: const EdgeInsets.symmetric(vertical: 5),
                                 child: ListTile(
                                   onLongPress: () {
                                     showDialog(
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            title: Text("Delete"),
-                                            content: Text(
-                                                "are you sure you want to delete"),
+                                            title: const Text("Delete"),
+                                            content: const Text(
+                                                "Are you sure you want to delete"),
                                             actions: [
                                               ElevatedButton(
                                                   onPressed: () {
@@ -278,7 +278,7 @@ class _HomePageState extends State<admin> {
                                                       Navigator.pop(context);
                                                     });
                                                   },
-                                                  child: Text("Delete"))
+                                                  child: const Text("Delete"))
                                             ],
                                           );
                                         });
@@ -286,7 +286,7 @@ class _HomePageState extends State<admin> {
                                   leading: Container(
                                     width: 40,
                                     height: 40,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         color: Colors.deepPurple,
                                         shape: BoxShape.circle),
                                   ),
@@ -310,13 +310,13 @@ class _HomePageState extends State<admin> {
                                                           id: singleUser.id),
                                                     )));
                                       },
-                                      child: Icon(Icons.edit)),
+                                      child: const Icon(Icons.edit)),
                                 ),
                               );
                             }),
                       );
                     }
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   })
