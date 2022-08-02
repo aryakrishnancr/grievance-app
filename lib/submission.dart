@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:user_auth/user_auth.dart';
+import 'package:lottie/lottie.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({Key? key}) : super(key: key);
@@ -23,19 +24,9 @@ class _HomeScreenState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Center(
-        child: Container(
-          height: 200,
-          decoration: BoxDecoration(
-            image: const DecorationImage(
-              image: NetworkImage(
-                  "https://cdn.dribbble.com/users/125948/screenshots/1792683/thankyoucontactdribbble.gif"),
-              fit: BoxFit.contain,
-            ),
-          ),
-        ),
-      ),
+          child: Lottie.network(
+              'https://assets6.lottiefiles.com/packages/lf20_3p2mgrek.json')), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
